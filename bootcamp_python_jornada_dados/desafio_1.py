@@ -7,10 +7,10 @@ VALOR_BONUS_ANO = 1000
 # recebe informações do usuário
 nome = input("Qual seu nome? ")
 salario = float(input("Qual seu salário? "))
-perc_bonus = float(input("Qual o percentual do seu bônus? "))
+mult_bonus = float(input("Qual o percentual do seu bônus? "))
 
 # calcula o bonus
-bonus_base = salario * perc_bonus
+bonus_base = salario * mult_bonus
 bonus_final = VALOR_BONUS_ANO + bonus_base
 
 # retorna o resultado para o usuario
