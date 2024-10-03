@@ -2,7 +2,7 @@
 # retorna o valor do bonus
 # 1000 + (salario * bonus)
 
-VALOR_BONUS_ANO = 1000
+VALOR_BONUS_ANO: float = 1000.00
 
 historico_calculos: list = []
 
