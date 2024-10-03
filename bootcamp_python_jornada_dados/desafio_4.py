@@ -4,6 +4,8 @@
 
 VALOR_BONUS_ANO = 1000
 
+historico_calculos: list = []
+
 continuar: str = "s"
 
 while continuar == "s":
@@ -11,6 +13,8 @@ while continuar == "s":
     nome_valido: bool = False
     salario_valido: bool = False
     bonus_valido: bool = False
+
+    calculo_atual: dict = {}
 
     # recebe informações do usuário
     while nome_valido is not True:
@@ -52,8 +56,30 @@ while continuar == "s":
     bonus_base: float = salario * mult_bonus
     bonus_final: float = VALOR_BONUS_ANO + bonus_base
 
-    # retorna o resultado para o usuario
+    calculo_atual = {
+        "nome": nome,
+        "salario": salario,
+        "mult_bonus": mult_bonus,
+        "adicional_bonus_ano": VALOR_BONUS_ANO,
+        "bonus_final": bonus_final
+    }
+    # adiciona calculo atual no histórico
+    historico_calculos.append(calculo_atual)
+
+    # imprime o resultado para o usuario
     print(f"Olá {nome}. Seu bônus será de {bonus_final:,.2f} reais.")
+
+    mostrar_historico: str = input("Deseja ver o histórico de calculos? (s/n) ").lower()
+    if mostrar_historico == "s":
+        for calculo in historico_calculos:
+            i = historico_calculos.index(calculo)
+            print('=' * 35)
+            print(f"Calculo de número {i + 1}:")
+            print(f"- Nome: {calculo['nome']}")
+            print(f"- Salário: {calculo['salario']}")
+            print(f"- Multiplicador do Bônus: {calculo['mult_bonus']}")
+            print(f"- Adicional de Bônus do Ano: {calculo['adicional_bonus_ano']}")
+            print(f"- Bônus: {calculo['bonus_final']}")
 
     continuar = input("Você deseja fazer um novo calculo? (s/n) ").lower()
 
