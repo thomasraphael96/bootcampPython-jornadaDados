@@ -76,10 +76,10 @@ while continuar == "s":
             print('=' * 35)
             print(f"Calculo de número {i + 1}:")
             print(f"- Nome: {calculo['nome']}")
-            print(f"- Salário: {calculo['salario']}")
+            print(f"- Salário: {calculo['salario']:,.2f}")
             print(f"- Multiplicador do Bônus: {calculo['mult_bonus']}")
-            print(f"- Adicional de Bônus do Ano: {calculo['adicional_bonus_ano']}")
-            print(f"- Bônus: {calculo['bonus_final']}")
+            print(f"- Adicional de Bônus do Ano: {calculo['adicional_bonus_ano']:,.2f}")
+            print(f"- Bônus: {calculo['bonus_final']:,.2f}")
 
     continuar = input("Você deseja fazer um novo calculo? (s/n) ").lower()
 
